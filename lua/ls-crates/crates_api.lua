@@ -1,4 +1,4 @@
-local Api = require("api")
+local Api = require("ls-crates.api")
 
 local M = {}
 

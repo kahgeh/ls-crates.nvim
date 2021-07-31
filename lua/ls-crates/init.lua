@@ -1,8 +1,7 @@
-local api = require("crates_api")
+local api = require("ls-crates.crates_api")
 
-local M = {}
 
-function M.get_latest_versions(crate_name)
+local function get_latest_versions(crate_name)
   local function on_receive_get_package_result(data)
     local MAX_VERSIONS = 5
     local i=1
@@ -25,7 +24,7 @@ local function get_crate_name()
   return string.gsub( vim.split(line,"=")[1], " ", "" )
 end
 
-function M.insert_latest_version()
+local function insert_latest_version()
   local function on_receive_get_package_result(data)
     vim.api.nvim_input("i" .. data.crate.max_version)
   end
@@ -33,6 +32,7 @@ function M.insert_latest_version()
   api.get_package(crate_name, on_receive_get_package_result)
 end
 
-return M
-
+return {
+  insert_latest_version = insert_latest_version
+}
 
