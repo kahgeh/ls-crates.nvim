@@ -17,3 +17,8 @@ executing the `insert_latest_version` method will result in the version being po
 [dependencies]
 tower="0.4.8"
 ```
+
+# References
+
+- original source for `api.lua` - https://github.com/akinsho/dependency-assist.nvim/blob/main/lua/dependency_assist/api.lua
+- original source for `crates_api.lua` - https://github.com/akinsho/dependency-assist.nvim/blob/main/lua/dependency_assist/rust/crates_api.lua
